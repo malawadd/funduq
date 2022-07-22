@@ -99,7 +99,7 @@ class RecordModal extends React.Component{
                     <input type="file" onChange={this.captureFile} id="audio-file-uploading" className="mx-auto w-4/5 audio-file-uploading"/>
                     <input type="text" onChange={(e)=>{this.setState({name:e.target.value})}} value={this.state.name} placeholder="name" className="mt-5 p-1 px-3 rounded w-full border-2 border-black"></input>
                     <div className="mt-2 w-full text-center">
-                        <label for="categories">Choose a category:</label>
+                        <label htmlFor="categories">Choose a category:</label>
                         <select name="categories" id="categories" className="ml-2 border-2 border-black" onChange={(e)=>{this.setState({category:e.target.value})}}>
                             <option value="tech">Tech</option>
                             <option value="fiction">Fiction</option>
