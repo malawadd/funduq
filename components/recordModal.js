@@ -8,6 +8,48 @@ const client = ipfsHttpClient({ host: 'ipfs.infura.io', port: 5001, protocol: 'h
 
 class RecordModal extends React.Component{
 
+    constructor(props){
+        super(props);
+        this.state = {
+            isRecording: false,
+            blobURL: '',
+            isBlocked: false,
+            playPause:'/record.svg',
+            isOpen:false,
+            name:"",
+            category:"tech",
+            file:"",
+            data:null,
+          };
+    }
+
+    start = ()=>{
+        navigator.mediaDevices.getUserMedia({ audio: true },
+        ()=>{
+            console.log('permission Granted')
+            this.setState({isBlocked:false})
+        },
+        ()=>{
+            console.log('permission Denied')
+            this.setState({isBlocked:true})
+        },
+        );
+
+        if (this.state.isBlocked) {
+            console.log("Permission Denied");
+        } else {
+
+            Mp3Recorder
+            .start()
+            .then(() => {
+                this.recordingStarted();
+                this.setState({isRecording:true, playPause:'/pause.svg'})
+            }).catch((e) => console.log(e));
+        }
+    }
+
+
+
     
 
     
