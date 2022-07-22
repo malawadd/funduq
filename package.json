@@ -36,7 +36,8 @@
     "ipfs-http-client": "^54.0.2",
     "lamejs": "^1.2.1",
     "ethers": "^5.5.1",
-    "mic-recorder-to-mp3": "^2.2.2"
+    "mic-recorder-to-mp3": "^2.2.2",
+    "react-hot-toast": "^2.1.1"
   },
   "devDependencies": {
     "buffer": "^6.0.3",
