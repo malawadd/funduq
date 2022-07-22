@@ -4,4 +4,9 @@ const nextConfig = {
   swcMinify: true,
 }
 
-module.exports = nextConfig
+module.exports = {
+  nextConfig,
+  env :{
+    NEXT_MNENOMIC: process.env.MNENOMIC,
+    NEXT_MUMBAI: process.env.MUMBAI,
+  }}

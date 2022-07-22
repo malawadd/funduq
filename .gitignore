@@ -30,3 +30,16 @@ yarn-error.log*
 
 # vercel
 .vercel
+
+# smart contract 
+/smartContract/node_modules
+/.env
+
+#Hardhat files
+/smartContract/cache
+/smartContract/artifacts
+
+.env
+
+
+
