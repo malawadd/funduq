@@ -1,5 +1,5 @@
 import 'tailwindcss/tailwind.css'
-import '../styles/globals.css'
+import '../public/global.css'
 import Link from 'next/link'
 import { createContext, useEffect, useState } from 'react'
 import Web3Modal from "web3modal"
