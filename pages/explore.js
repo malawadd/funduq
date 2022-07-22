@@ -3,6 +3,7 @@ import PlayingBarExplore from '../components/playingBarExplore'
 import { Config } from './_app'
 import toast, { Toaster } from 'react-hot-toast';
 import Head from 'next/head'
+import PodcastCard from '../components/podcastCard';
 
 let AudioHandler = createContext()
 
@@ -95,25 +96,31 @@ function Explore() {
                     <div onClick={()=>{setUserPodcasts([]);setTab("fiction")}} className={` cursor-pointer border-2 border-white mb-5 p-1 px-5 rounded-full mx-3 ${tab === "fiction" ? "bg-secondary font-semibold":""}`}>
                         Fiction
                     </div>
-                    <div onClick={()=>{setUserPodcasts([]);setTab("history")}} className={` cursor-pointer border-2 border-white mb-5 p-1 px-5 rounded-full mx-3 ${tab === "history" ? "bg-secondary font-semibold":""}`}>
-                        History
-                    </div>
                     <div onClick={()=>{setUserPodcasts([]);setTab("misc")}} className={` cursor-pointer border-2 border-white mb-5 p-1 px-5 rounded-full mx-3 ${tab === "misc" ? "bg-secondary font-semibold":""}`}>
                         Misc
                     </div>
                 </div>
             </div>
             <div>
-                {
-                    userPodcasts.length > 0 ?
+            {
+                    userPodcasts.length === 0 ?
                     <h1 className="text-center w-full mx-auto mt-5">No Podcasts</h1>
                     :
                     <div className="md:mx-auto px-2 md:px-10 max-w-full grid grid-cols-1 md:grid-cols-3 gap-5 mx-10 pb-5">
-
+                        {userPodcasts.map((data,key)=>{
+                                return(
+                                    <div key={key}>
+                                        <PodcastCard data={data} k={key}/>
+                                    </div>
+                                )
+                            })
+                        }
                     </div>
-
+                    
                 }
             </div>
+            <PlayingBarExplore/>
+            <Toaster/>
         </div>
 
         </AudioHandler.Provider>
