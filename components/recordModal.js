@@ -61,7 +61,8 @@ class RecordModal extends React.Component{
     upload = async () => {
         const addedAudio = await client.add(this.state.data);
         const url = `https://ipfs.infura.io/ipfs/${addedAudio.path}`
-        this.props.SawtiContract.publishPodcast(url,this.state.name,this.state.category);
+        console.log(this.props.sawtiContract)
+        this.props.sawtiContract.publishPodcast(url,this.state.name,this.state.category);
         this.setState({isOpen:false});
     }
 

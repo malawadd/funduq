@@ -79,7 +79,7 @@ function MyApp({ Component, pageProps }) {
       value={{
         signer:signer,
         signerAdd:signerAdd,
-        sawtiAddress:sawtiAddress,
+        sawtiContract:sawtiContract,
         connectWallet:connectWallet
       }}
     >
