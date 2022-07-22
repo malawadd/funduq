@@ -4,8 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "start": "next build",
-    "build": "next start",
+    "start": "next start",
+    "build": "next build",
     "test": "next test",
     "deploy-definitions": "ts-node --project ./scripts/node.tsconfig.json ./scripts/deployDefinitions.ts"
   },
