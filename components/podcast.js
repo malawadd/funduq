@@ -3,6 +3,8 @@ import { useRef } from 'react';
 import { AudioHandler } from '../pages/dashboard';
 import { Config } from '../pages/_app';
 import { create as ipfsHttpClient } from 'ipfs-http-client'
+import  deepai  from 'deepai';
+import axios from "axios";
 
 const client = ipfsHttpClient({ host: 'ipfs.infura.io', port: 5001, protocol: 'https' })
 
@@ -78,10 +80,16 @@ function Podcast(props){
     }
 
     async function nftSize(){
+        deepai.setApiKey(process.env.NEXT_DEEPAI_API_KEY);
+         const nftimage = await deepai.callStandardApi("text2img", {
+            text: props.data.name ,});
+        console.log(nftimage)
+
+
         let obj = {
             name: props.data.name,
-            description: `${props.data.name} this audio is being deployed on the blockchain through Sawti.`,
-            image: `https://api.apitemplate.io/2d777b2b12d20ddc@${process.env.NEXT_PUBLIC_AUTH_CODE}/image.png?text_1.text=Sawti%23${props.data.id}`,
+            description: `${props.data.name} audio is being deployed on the blockchain by Sawti.`,
+            image: nftimage.output_url,
             animation_url:props.data.link
         }
 
@@ -90,6 +98,27 @@ function Podcast(props){
         const addedAudio = await client.add(jsn)
         const url = `https://ipfs.infura.io/ipfs/${addedAudio.path}`
         context2.sawtiContract.makeNFT(url,props.data.id)
+
+        
+        const options = {
+        method: 'POST',
+        url: 'https://api.nftport.xyz/v0/mints/easy/urls',
+        headers: {'Content-Type': 'application/json', Authorization: process.env.NEXT_NFTPort},
+        data: {
+            chain: 'polygon',
+            name: props.data.name,
+            description: `${props.data.name} audio is being deployed on the blockchain by Sawti.`,
+            file_url: nftimage.output_url,
+            mint_to_address: context2.signerAdd,
+        }
+        };
+        axios.request(options).then(function (response) {
+        console.log(response.data);
+        setNft(false);
+        }).catch(function (error) {
+        console.error(error);
+        });
+
     }
     return (
         <div className="flex p-5 flex-col lg:flex-row items-center justify-between border border-gray-300 transition-all duration-200 mt-5 rounded-md w-2/5 hover:shadow-xl">
