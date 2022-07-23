@@ -121,14 +121,14 @@ function Podcast(props){
 
     }
     return (
-        <div className="flex p-5 flex-col lg:flex-row items-center justify-between border border-gray-300 transition-all duration-200 mt-5 rounded-md w-2/5 hover:shadow-xl">
+        <div className="flex p-5 flex-col lg:flex-row items-center justify-between border-2 border-pink-500 transition-all duration-200 mt-5 rounded-md w-2/5 hover:shadow-xl">
             <audio className="audio-element" ref={reference}>
                 <source src={props.data.link}></source>
             </audio>
-            <div className="px-5 " onClick={playAudio}>
-                <img src={playPause} className="img-fluid" width="30" />
+            <div className="px-5   " onClick={playAudio}>
+                <img src={playPause} className="img-fluid " width="30" />
             </div>
-            <div className="px-5 my-3 lg:my-0">
+            <div className="px-5 my-3 lg:my-0 bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-500">
                 {props.data.name}
             </div>
             {
@@ -139,7 +139,7 @@ function Podcast(props){
                 :
                 <></>
             }
-            <div className="px-5">
+            <div className="px-5 bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-500 ">
                 {d.toLocaleDateString("en-US")}
             </div>
         </div>

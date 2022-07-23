@@ -1,5 +1,6 @@
 import Head from "next/head";
 import Link from "next/dist/client/link";
+import Image from "next/image";
 
 export default function Home() {
   return (
@@ -9,22 +10,29 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <div className="min-h-screen w-full">
-        <div className=" h-screen">
-          <div className=" py-10 bg-primary  flex items-center px-5 md:px-20 justify-between  text-white">
-            <div>
-              <div className="text-5xl sm:text-6xl py-10 drop-shadow-lg font-bold">A blockchain Audio experince for the world</div>
-              <div className=" text-xl leading-8">Sawti allows you to publish all your audio in a decentralized way.</div>
-
-              <Link href="/dashboard">
-                <a>
-                  <button className="bg-white hover:bg-transparent hover:text-white transition-all duration-300 border border-white  text-black py-3 px-10 mt-10 mb-10">START TODAY</button>
-                </a>
-              </Link>
-            </div>
-            picture
+      <div className=" px-20 min-h-screen w-full bg-gradient-to-r from-indigo-200 via-red-200 to-yellow-100">
+        <div className="grid grid-rows-3 grid-flow-col gap-4 py-12">
+          <div className="row-span-3 ...">
+            {" "}
+            <img src="/mic.svg" className="img-fluid" width="300" />
           </div>
-          <div className=" text-center mt-14 text-primary text-lg px-5">some more words for foooter</div>
+          <div className="col-span-2 ...">
+            <div className=" static  leading-20 text-5xl sm:text-6xl py-10 drop-shadow-lg  text-center font-extrabold">
+              A blockchain <a className="underline decoration-8 decoration-pink-500"> Audio experince </a> 🎤
+            </div>
+          </div>
+          <div className="row-span-1 col-span-2 ...">
+            <div className=" text-xl text-center ">
+              Sawti allows you to publish all your audio in a decentralized way, and turn them into NFT. its powered By <a className="underline decoration-2 decoration-pink-500">IPFS</a> and <a className="underline decoration-2 decoration-pink-500">NFTPORT</a>
+              <div className="text-center">
+                <Link href="/dashboard">
+                  <a>
+                    <button className=" hover:bg-transparent bg-pink-500 hover:text-pink-500 transition-all duration-300 border border-pink-800 text-black py-3 px-10 mt-10 mb-10">START TODAY</button>
+                  </a>
+                </Link>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>

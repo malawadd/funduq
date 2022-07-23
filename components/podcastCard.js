@@ -55,7 +55,7 @@ function PodcastCard(props){
     }
 
     return (
-        <div className="p-5 border-2 border-black transition-all duration-200 mt-5 rounded-2xl  hover:shadow-xl ">
+        <div className="p-5 border-2 border-black transition-all duration-200 mt-5 rounded-2xl  hover:shadow-xl  ">
             <audio className="audio-element" ref={reference}>
                 <source src={props.data.link}></source>
             </audio>

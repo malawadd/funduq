@@ -9,7 +9,7 @@ function PlayingBar(){
         context?.audioData?.duration === 0 ?
         <div></div>
         :
-        <div className=" fixed border-2 px-5 border-white bottom-0 shadow-md py-5 rounded-t-md rounded-r-md bg-primary  text-white min-w-1/5 max-w-xs break-words flex items-start flex-col justify-around bg-primay">
+        <div className=" fixed border-2 px-5 border-white bottom-0 shadow-md py-5 rounded-t-md rounded-r-md bg-pink-500  text-white min-w-1/5 max-w-xs break-words flex items-start flex-col justify-around bg-primay">
             <div className="w-full">
                 Now playing: <br/>
                 <div className="text-xl font-semibold mb-5 mt-1">

@@ -43,7 +43,7 @@ function MyApp({ Component, pageProps }) {
 
   return (
     <>
-    <nav className=" flex justify-between items-center py-5 px-8 bg-primary text-white">
+    <nav className=" flex justify-between items-center py-5 px-8 bg-pink-500 text-white">
       <div>
         <Link href="/">
         <a className=" font-semibold">
@@ -55,7 +55,7 @@ function MyApp({ Component, pageProps }) {
         <button className="border ml-auto mr-5 rounded py-3 px-5 visible md:hidden" onClick={()=>{navBar === "hidden" ? setNavBar("flex") : setNavBar("hidden") }} >
           =
         </button>
-        <div className={`flex-1 w-full ${navBar}  flex-col items-center md:flex-row absolute md:static md:flex left-0 z-10 bg-primary`} >
+        <div className={`flex-1 w-full ${navBar}  flex-col items-center md:flex-row absolute md:static md:flex left-0 z-10 bg-pink-500`} >
           <Link href="/explore">
           <a className="mx-5 py-2 md:py-0">
             Explore

@@ -52,14 +52,14 @@ function Dashboard(){
                 <title>Sawti | Dashboard</title>
                 <link rel="icon" href="/favicon.ico" />
             </Head>
-            <div className="min-h-screen w-full">
-                <div className="py-10 px-5 flex items-center justify-center flex-col bg-primary text-white">
+            <div className="min-h-screen w-full bg-gradient-to-r from-indigo-200 via-red-200 to-yellow-100">
+                <div className="py-10 px-5 flex items-center justify-center flex-col bg-gradient-to-r from-indigo-200 via-red-200 to-yellow-100 text-white">
                     <img src={`https://robohash.org/${context.signerAdd}`} className="img-fluid" width="200"/>
                     <div className=" text-4xl py-5 break-all">
-                        Hello, {context.signerAdd}
+                        Hello, <a className="underline decoration-8 decoration-pink-500 bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-500">  {context.signerAdd} </a>
                     </div>
                 </div>
-                <div className="container mx-auto flex flex-col items-center py-5">
+                <div className="container mx-auto flex flex-col items-center py-5 ">
                     {
                     userPodcasts.length !== 0 ?
                     
@@ -69,8 +69,8 @@ function Dashboard(){
                         )
                     })
                     :
-                    <div className="text-center text-xl mt-5"> 
-                        You have no podcasts yet. Create one by clicking the mic button on bottom-right.
+                    <div className="text-center text-xl mt-5 bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-500"> 
+                        You have no audios yet. Create one by clicking the mic button on bottom-right.
                     </div>
                     
                      }
