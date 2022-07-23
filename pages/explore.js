@@ -84,7 +84,7 @@ function Explore() {
                     Explore
                 </div>
                 <div className="pt-4 text-xl pb-10 text-center bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-500">
-                    Browse through various podcasts across many categories
+                    Browse through various Audios across many categories
                 </div>
                 <div className="flex items-center justify-center flex-wrap pb-10 text-black">
                     <div onClick={()=>{setUserPodcasts([]);setTab("all");}} className={` cursor-pointer border-2 border-pink-800 mb-5 p-1 px-5 rounded-full mx-3 ${tab === "all" ? "bg-pink-500 font-semibold text-white":""}`}>
@@ -104,7 +104,7 @@ function Explore() {
             <div >
             {
                     userPodcasts.length === 0 ?
-                    <h1 className="text-center w-full mx-auto mt-5">No Podcasts</h1>
+                    <h1 className="text-center w-full mx-auto mt-5">No Audios</h1>
                     :
                     <div className="md:mx-auto px-2 md:px-10 max-w-full grid grid-cols-1 md:grid-cols-3 gap-5 mx-10 pb-5 ">
                         {userPodcasts.map((data,key)=>{
